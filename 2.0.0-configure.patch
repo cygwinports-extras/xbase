@@ -1,0 +1,19 @@
+--- origsrc/xbase-2.0.0/configure.in	2001-06-26 18:39:31.000000000 -0500
++++ src/xbase-2.0.0/configure.in	2008-09-03 01:36:14.111605300 -0500
+@@ -72,7 +72,7 @@
+ 
+ AC_ARG_WITH(index-ntx, [  --without-index-ntx     do not compile .ntx index support ], enable_index_ntx="$withval", enable_index_ntx="yes")
+ if test "$enable_index_ntx" = "yes"; then
+-  AC_DEFINE(XB_INDEX_NTX,1)~
++  AC_DEFINE(XB_INDEX_NTX,1)
+ fi
+ 
+ AC_ARG_WITH(memo-fields, [  --without-memo-fields   do not compile memo fields support ], enable_memo_fields="$withval", enable_memo_fields="yes")
+@@ -142,7 +142,6 @@
+ 	    html/Makefile
+ 	    tv/Makefile
+     	    libtest/Makefile
+-dnl	    ybase/Makefile
+ 	    xbase-config
+ 	    xbase.spec
+ 	    docs/doxygen.cfg

@@ -9,46 +9,47 @@ support for DBF (dBase version 3 and 4) data files, NDX and NTX indexes,
 and DBT (dBase version 3 and 4).
 
 Runtime requirements:
-  cygwin-1.5.18-1
+  cygwin-1.5.25-15
 
 Build requirements:
-  cygwin-1.5.18-1
-  autoconf2.5-2.59-3
-  automake1.9-1.9.6.1
-  binutils-20050610-1
-  gawk-3.1.5-1
-  gcc-core-3.4.4-1
-  gcc-g++-3.4.4-1
-  libtool1.5-1.5.20-1
-  make-3.80-1
-  sed-4.1.4-1
+  autoconf2.5-2.61-1
+  automake1.4-1.4p6-4
+  binutils-20080624-2
+  cygport-0.4.0-1
+  gawk-3.1.6-1
+  gcc-core-3.4.4-3
+  gcc-g++-3.4.4-3
+  kapptemplate-3.5.9-1
+  libtool-2.2.2-2
+  make-3.81-1
+  sed-4.1.5-2
 
 Canonical website:
-  http://www.rekallrevealed.org/
+  http://linux.techass.com/projects/xdb/
 
 Canonical download:
-  http://www.rekallrevealed.org/packages/
+  http://downloads.sourceforge.net/xdb/
 
 -------------------------------------------
 
 Build instructions:
-  unpack xbase-2.0.0-1-src.tar.bz2
+  unpack xbase-2.0.0-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  ./xbase-2.0.0-1.sh all
+  cygport ./xbase-2.0.0-X.cygport all
 
 This will create:
-  /usr/src/libxbase2-2.0.0-1.tar.bz2
-  /usr/src/xbase-2.0.0-1-src.tar.bz2
-  /usr/src/xbase-2.0.0-1.tar.bz2
-  /usr/src/xbase-devel-2.0.0-1.tar.bz2
-  /usr/src/xbase-doc-2.0.0-1.tar.bz2
+  /usr/src/libxbase-devel-2.0.0-X.tar.bz2
+  /usr/src/libxbase2.0-2.0.0-X.tar.bz2
+  /usr/src/xbase-2.0.0-X-src.tar.bz2
+  /usr/src/xbase-2.0.0-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the binary package:
+Files included in the binary packages:
 
+(xbase)
   /usr/bin/checkndx.exe
   /usr/bin/copydbf.exe
   /usr/bin/dbfutil1.exe
@@ -60,21 +61,18 @@ Files included in the binary package:
   /usr/bin/reindex.exe
   /usr/bin/undelall.exe
   /usr/bin/zap.exe
-  /usr/share/doc/Cygwin/xbase-2.0.0.README
   /usr/share/doc/xbase-2.0.0/AUTHORS
-  /usr/share/doc/xbase-2.0.0/ChangeLog
   /usr/share/doc/xbase-2.0.0/COPYING
+  /usr/share/doc/xbase-2.0.0/ChangeLog
   /usr/share/doc/xbase-2.0.0/INSTALL
   /usr/share/doc/xbase-2.0.0/NEWS
   /usr/share/doc/xbase-2.0.0/README
   /usr/share/doc/xbase-2.0.0/TODO
 
-Files included in the lib package:
-
+(libxbase2.0)
   /usr/bin/cygxbase-2-0-0.dll
 
-Files included in the devel package:
-
+(libxbase-devel)
   /usr/bin/xbase-config
   /usr/include/xbase/dbf.h
   /usr/include/xbase/exp.h
@@ -91,53 +89,16 @@ Files included in the devel package:
   /usr/include/xbase/xdate.h
   /usr/include/xbase/xstack.h
   /usr/include/xbase/xtypes.h
+  /usr/lib/libxbase.a
   /usr/lib/libxbase.dll.a
   /usr/lib/libxbase.la
-
-Files included in the doc package:
-
-  /usr/share/doc/xbase-2.0.0/html/COPYING.LIB
-  /usr/share/doc/xbase-2.0.0/html/cvsdoc
-  /usr/share/doc/xbase-2.0.0/html/Xb2cpp.html
-  /usr/share/doc/xbase-2.0.0/html/xbase.html
-  /usr/share/doc/xbase-2.0.0/html/xbase.jpg
-  /usr/share/doc/xbase-2.0.0/html/xbase_a1.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_a2.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_apps.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_bib.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_c1.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_c10.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_c11.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_c12.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_c13.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_c14.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_c15.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_c16.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_c17.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_c18.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_c19.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_c2.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_c3.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_c4.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_c5.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_c6.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_c8.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_c9.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_download.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_help.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_links.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_locking.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_mail.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_order.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_port.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_preamble.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_probs.html
-  /usr/share/doc/xbase-2.0.0/html/xbase_toc.html
-  /usr/share/doc/xbase-2.0.0/html/zipflow.gif
 
 ------------------
 
 Port Notes:
+
+----- version 2.0.0-1 -----
+Rebuilt with cygport.
 
 ----- version 2.0.0-1 -----
 Initial release for Cygwin.
