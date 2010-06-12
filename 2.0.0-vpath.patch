@@ -1,0 +1,55 @@
+--- origsrc/xbase-2.0.0/bin/Makefile.am	2000-11-10 13:30:29.000000000 -0600
++++ src/xbase-2.0.0/bin/Makefile.am	2010-06-10 18:21:44.826160100 -0500
+@@ -1,6 +1,6 @@
+ 
+-INCLUDES= -I$(topdir) $(all_includes)
+-LDADD	= -L$(topdir)/xbase/.libs -lxbase
++INCLUDES= -I$(top_builddir) -I$(top_srcdir) $(all_includes)
++LDADD	= $(top_builddir)/xbase/libxbase.la
+ 
+ INSTALL_PROGRAM = @INSTALL@
+ 
+--- origsrc/xbase-2.0.0/docs/doxygen.cfg.in	2000-12-12 00:32:00.000000000 -0600
++++ src/xbase-2.0.0/docs/doxygen.cfg.in	2008-09-03 01:46:55.015316500 -0500
+@@ -268,7 +268,7 @@
+ # directories like "/usr/src/myproject". Separate the files or directories 
+ # with spaces. 
+ 
+-INPUT                  = ../xbase
++INPUT                  = @top_builddir@/xbase @top_srcdir@/xbase
+ 
+ # If the value of the INPUT tag contains directories, you can use the 
+ # FILE_PATTERNS tag to specify one or more wildcard pattern (like *.cpp 
+--- origsrc/xbase-2.0.0/examples/Makefile.am	2000-11-10 13:28:38.000000000 -0600
++++ src/xbase-2.0.0/examples/Makefile.am	2010-06-10 18:21:49.633435100 -0500
+@@ -1,6 +1,6 @@
+ 
+-INCLUDES= -I$(topdir) $(all_includes)
+-LDADD	= -L$(topdir)/xbase/.libs -lxbase
++INCLUDES= -I$(top_builddir) -I$(top_srcdir) $(all_includes)
++LDADD	= $(top_builddir)/xbase/libxbase.la
+ 
+ # for shadow passwords override the value
+ INSTALL_PROGRAM = @INSTALL@
+--- origsrc/xbase-2.0.0/libtest/Makefile.am	2000-11-10 13:29:27.000000000 -0600
++++ src/xbase-2.0.0/libtest/Makefile.am	2010-06-10 18:23:10.949086000 -0500
+@@ -1,6 +1,6 @@
+ 
+-INCLUDES= -I$(topdir) $(all_includes)
+-LDADD	= -L$(topdir)/xbase/.libs -lxbase
++INCLUDES= -I$(top_builddir) -I$(top_srcdir) $(all_includes)
++LDADD	= $(top_builddir)/xbase/libxbase.la
+ 
+ INSTALL_PROGRAM = @INSTALL@
+ 
+--- origsrc/xbase-2.0.0/xbase/Makefile.am	2010-06-10 18:02:03.397586200 -0500
++++ src/xbase-2.0.0/xbase/Makefile.am	2010-06-10 18:18:40.491616800 -0500
+@@ -35,7 +35,7 @@
+ #        xdb.sourceforge.net
+ #
+ 
+-INCLUDES = -I$(topdir)
++INCLUDES = -I$(top_builddir) -I$(top_srcdir)
+ 
+ lib_LTLIBRARIES = libxbase.la
+ 

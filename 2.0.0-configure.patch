@@ -1,6 +1,47 @@
---- origsrc/xbase-2.0.0/configure.in	2001-06-26 18:39:31.000000000 -0500
-+++ src/xbase-2.0.0/configure.in	2008-09-03 01:36:14.111605300 -0500
-@@ -72,7 +72,7 @@
+--- origsrc/xbase-2.0.0/configure.in	2010-06-10 18:02:02.683545400 -0500
++++ src/xbase-2.0.0/configure.in	2010-06-10 18:02:05.595712000 -0500
+@@ -1,7 +1,7 @@
+ # Created by Denis Pershin <dyp@inetlab.com>
+ 
+ dnl Process this file with autoconf to produce a configure script.
+-AC_INIT(acinclude.m4) dnl a source file from your sub dir, but acinclude.m4 does the job
++AC_INIT(xbase/xbase.cpp)
+ AC_CANONICAL_SYSTEM
+ AC_ARG_PROGRAM
+ 
+@@ -15,8 +15,9 @@ dnl generate the config header
+ AM_CONFIG_HEADER(xbase/xbconfig.h) dnl at the distribution this done
+ 
+ dnl Checks for programs.
+-AC_CHECK_COMPILERS
+-KDE_PROG_LIBTOOL
++AC_PROG_CC
++AC_PROG_CXX
++AC_PROG_LIBTOOL
+ 
+ AC_CHECK_PROG(doxygen, doxygen, yes, no)
+ if test "$doxygen" = "yes"; then
+@@ -43,16 +44,16 @@ dnl Checks for typedefs, structures, and
+ AC_HEADER_TIME
+ 
+ dnl check if the compiler has bool
+-AC_CHECK_BOOL
++AC_CHECK_TYPES(bool)
+ dnl check if the system needs some #defines
+-AC_CHECK_GNU_EXTENSIONS
++AC_USE_SYSTEM_EXTENSIONS
+ 
+ dnl Checks for library functions. 
+ AC_CHECK_FUNCS(flock) dnl
+ AC_CHECK_FUNCS(fcntl)
+ AC_CHECK_FUNCS(snprintf) dnl
+ AC_CHECK_FUNCS(socket vsnprintf vsprintf)
+-AC_CHECK_SETENV
++AC_CHECK_FUNCS(setenv)
+ AC_LANG_CPLUSPLUS
+ AC_CHECK_FUNCS(getdomainname)
+ AC_CHECK_FUNCS(strcasecmp)
+@@ -72,7 +73,7 @@
  
  AC_ARG_WITH(index-ntx, [  --without-index-ntx     do not compile .ntx index support ], enable_index_ntx="$withval", enable_index_ntx="yes")
  if test "$enable_index_ntx" = "yes"; then
@@ -9,7 +50,7 @@
  fi
  
  AC_ARG_WITH(memo-fields, [  --without-memo-fields   do not compile memo fields support ], enable_memo_fields="$withval", enable_memo_fields="yes")
-@@ -142,7 +142,6 @@
+@@ -142,7 +143,6 @@
  	    html/Makefile
  	    tv/Makefile
      	    libtest/Makefile

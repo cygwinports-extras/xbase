@@ -1,0 +1,28 @@
+DESCRIPTION="dBase/FoxPro compatible database library"
+HOMEPAGE="http://linux.techass.com/projects/xdb/"
+SRC_URI="mirror://sourceforge/xdb/${P}.tar.gz"
+PATCH_URI="
+	mirror://portage/dev-db/${PN}/files/${P}-gcc43.patch
+	2.0.0-configure.patch
+	2.0.0-no-undefined.patch
+	2.0.0-vpath.patch
+	2.0.0-gcc43.patch
+"
+
+PKG_NAMES="${PN} libxbase2.0_0 libxbase-devel"
+xbase_CONTENTS="usr/bin/*.exe usr/share/doc/"
+libxbase2_0_0_CONTENTS="usr/bin/*-2-0-0.dll"
+libxbase_devel_CONTENTS="usr/bin/${PN}-config usr/include/ usr/lib/"
+
+DISTCLEANFILES="acinclude.m4 xbase/xbase.h"
+DIFF_EXCLUDES="xbconfig.h"
+
+CYGCONF_ARGS="--enable-static --enable-shared"
+
+src_test() {
+	cd ${B}/libtest
+	for x in *.exe
+	do
+		./$x
+	done
+}

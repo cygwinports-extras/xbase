@@ -9,20 +9,21 @@ support for DBF (dBase version 3 and 4) data files, NDX and NTX indexes,
 and DBT (dBase version 3 and 4).
 
 Runtime requirements:
-  cygwin-1.5.25-15
+  cygwin-1.7.5-1
+  libgcc1-4.3.4-3
+  libstdc++6-4.3.4-3
 
 Build requirements:
-  autoconf2.5-2.61-1
-  automake1.4-1.4p6-4
-  binutils-20080624-2
-  cygport-0.4.0-1
-  gawk-3.1.6-1
-  gcc-core-3.4.4-3
-  gcc-g++-3.4.4-3
-  kapptemplate-3.5.9-1
-  libtool-2.2.2-2
-  make-3.81-1
-  sed-4.1.5-2
+  autoconf2.5-2.65-1
+  automake1.4-1.4p6-10
+  binutils-2.20.51-2
+  cygport-0.9.84-1
+  gawk-3.1.7-1
+  gcc4-core-4.3.4-3
+  gcc4-g++-4.3.4-3
+  libtool-2.2.7a-15
+  make-3.81-2
+  sed-4.2.1-1
 
 Canonical website:
   http://linux.techass.com/projects/xdb/
@@ -41,67 +42,16 @@ Build instructions:
 
 This will create:
   /usr/src/libxbase-devel-2.0.0-X.tar.bz2
-  /usr/src/libxbase2.0-2.0.0-X.tar.bz2
+  /usr/src/libxbase2.0_0-2.0.0-X.tar.bz2
   /usr/src/xbase-2.0.0-X-src.tar.bz2
   /usr/src/xbase-2.0.0-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the binary packages:
-
-(xbase)
-  /usr/bin/checkndx.exe
-  /usr/bin/copydbf.exe
-  /usr/bin/dbfutil1.exe
-  /usr/bin/dbfxtrct.exe
-  /usr/bin/deletall.exe
-  /usr/bin/dumphdr.exe
-  /usr/bin/dumprecs.exe
-  /usr/bin/packdbf.exe
-  /usr/bin/reindex.exe
-  /usr/bin/undelall.exe
-  /usr/bin/zap.exe
-  /usr/share/doc/xbase-2.0.0/AUTHORS
-  /usr/share/doc/xbase-2.0.0/COPYING
-  /usr/share/doc/xbase-2.0.0/ChangeLog
-  /usr/share/doc/xbase-2.0.0/INSTALL
-  /usr/share/doc/xbase-2.0.0/NEWS
-  /usr/share/doc/xbase-2.0.0/README
-  /usr/share/doc/xbase-2.0.0/TODO
-
-(libxbase2.0)
-  /usr/bin/cygxbase-2-0-0.dll
-
-(libxbase-devel)
-  /usr/bin/xbase-config
-  /usr/include/xbase/dbf.h
-  /usr/include/xbase/exp.h
-  /usr/include/xbase/html.h
-  /usr/include/xbase/index.h
-  /usr/include/xbase/ndx.h
-  /usr/include/xbase/ntx.h
-  /usr/include/xbase/retcodes.h
-  /usr/include/xbase/xbase.h
-  /usr/include/xbase/xbconfig.h
-  /usr/include/xbase/xbexcept.h
-  /usr/include/xbase/xbfilter.h
-  /usr/include/xbase/xbstring.h
-  /usr/include/xbase/xdate.h
-  /usr/include/xbase/xstack.h
-  /usr/include/xbase/xtypes.h
-  /usr/lib/libxbase.a
-  /usr/lib/libxbase.dll.a
-  /usr/lib/libxbase.la
-
-------------------
-
 Port Notes:
 
------ version 2.0.0-1 -----
-Rebuilt with cygport.
-
------ version 2.0.0-1 -----
-Initial release for Cygwin.
+----- version 2.0.0-3 -----
+Initial release for Cygwin 1.7.
 
 
 Cygwin port maintained by:

@@ -1,6 +1,7 @@
 category: Database
-requires: libxbase2.0
-sdesc: "dBase/FoxPro compatible database library (utilities)"
+requires: libxbase2.0_0
+external-source: xbase
+sdesc: "dBase/FoxPro compatible database library (development)"
 ldesc: "XBase is an xbase (i.e. dBase, FoxPro, etc.) compatible C++ class
 library originally by Gary Kunkel and others.
 
